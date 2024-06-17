@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Photoweb
+Comment=Advanced Photo Editor
+Comment[es]=Editor de fotos avanzado
+Exec=/app/bin/photoweb.sh
+Icon=com.maxizamorano.photoweb
+Terminal=false
+Type=Application
+Categories=Graphics;Photography;

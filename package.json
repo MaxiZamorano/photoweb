@@ -1,0 +1,64 @@
+{
+  "name": "photoweb",
+  "version": "1.0.0",
+  "description": "Advanced Photo Editor",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "keywords": [
+    "photoweb",
+    "editor",
+    "photo",
+    "linux"
+  ],
+  "author": "Maxi Zamorano <contacto@maxizamorano.com>",
+  "homepage": "https://www.maxizamorano.com",
+  "license": "GPL-3.0",
+  "build": {
+    "appId": "com.maxizamorano.photoweb",
+    "productName": "Photoweb",
+    "extraResources": [
+      {
+        "from": "icons/",
+        "to": "icons/"
+      },
+      {
+        "from": "src/extension/no-ads",
+        "to": "extension/no-ads"
+      },
+      {
+        "from": "data/",
+        "to": "data/"
+      }
+    ],
+    "linux": {
+      "target": [
+        {
+          "target": "dir",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "category": "Graphics",
+      "maintainer": "Maxi Zamorano <contacto@maxizamorano.com>",
+      "executableName": "photoweb",
+      "icon": "icons/photoweb.png",
+      "desktop": {
+        "Name": "Photoweb",
+        "Comment": "Advanced Photo Editor",
+        "Icon": "/opt/Photoweb/resources/icons/photoweb.png",
+        "Terminal": "false",
+        "Type": "Application",
+        "Categories": "Graphics;Photography;"
+      }
+    }
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  }
+}

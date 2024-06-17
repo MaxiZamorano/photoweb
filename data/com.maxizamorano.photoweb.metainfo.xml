@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+    <id>com.maxizamorano.photoweb</id>
+    <launchable type="desktop-id">com.maxizamorano.photoweb.desktop</launchable>
+    <name>Photoweb</name>
+    <summary>Advanced Photo Editor</summary>
+    <summary xml:lang="es">Editor de fotos avanzado</summary>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0-or-later</project_license>
+    <developer_name>Maxi Zamorano</developer_name>
+    
+    <description>
+        <p lang="en">Photoweb is a web-based photo and graphics editor. It is used for image editing, illustration making, web design or converting between different image formats. It is the best alternative to Adobe Photoshop with support for multiple formats: SD, AI, INDD, XCF, Sketch, XD, FIG, KRI, CLIP, PXD, PXZ, CDR, UFO, Fireworks PNG, AFPHOTO, SVG, EPS, PDF, PDN, WMF, EMF. PNG (APNG), JPG, GIF, WebP, ICO, ICNS, BMP, AVIF, HEIC, JXL, PPM/PGM/PBM, TIFF, DDS, IFF, ANIM, TGA. DNG, NEF, CR2, CR3, ARW, RW2, RAF, ORF, GPR, 3FR, FFF. GIF, APNG, MP4, WEBM, MKV.</p>
+        <p lang="es">Photoweb es un editor de fotos y gráficos basado en la web. Se utiliza para la edición de imágenes, la realización de ilustraciones, el diseño web o la conversión entre diferentes formatos de imagen. Es la mejor alternativa a Adobe Photoshop con soporte para múltiples formatos: PSD, AI, INDD, XCF, Sketch, XD, FIG, KRI, CLIP, PXD, PXZ, CDR, UFO, Fireworks PNG, AFPHOTO, SVG, EPS, PDF, PDN, WMF, EMF. PNG (APNG), JPG, GIF, WebP, ICO, ICNS, BMP, AVIF, HEIC, JXL, PPM/PGM/PBM, TIFF, DDS, IFF, ANIM, TGA. DNG, NEF, CR2, CR3, ARW, RW2, RAF, ORF, GPR, 3FR, FFF. GIF, APNG, MP4, WEBM, MKV.</p>
+    </description>
+
+    <screenshots>
+        <screenshot type="default">
+            <image>https://raw.githubusercontent.com/MaxiZamorano/photoweb/main/screenshots/photoweb-1.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/MaxiZamorano/photoweb/main/screenshots/photoweb-2.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/MaxiZamorano/photoweb/main/screenshots/photoweb-3.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/MaxiZamorano/photoweb/main/screenshots/photoweb-4.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/MaxiZamorano/photoweb/main/screenshots/photoweb-5.png</image>
+        </screenshot>
+    </screenshots>
+    
+    <content_rating type="oars-1.1"/>
+    
+    <categories>
+        <category>Graphics</category>
+        <category>Photography</category>
+    </categories>
+    
+    <releases>
+        <release version="1.0.0" date="2024-06-17">
+            <description>
+                <p lang="en">Initial release of Photoweb.</p>
+                <p lang="es">Lanzamiento inicial de Photoweb.</p>
+            </description>
+        </release>
+    </releases>
+</component>

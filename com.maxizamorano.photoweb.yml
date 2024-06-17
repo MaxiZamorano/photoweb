@@ -1,0 +1,45 @@
+app-id: com.maxizamorano.photoweb
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: "23.08"
+command: photoweb.sh
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.node20
+finish-args:
+  - --socket=x11
+  - --share=network
+  - --filesystem=xdg-download
+  - --device=dri
+build-options:
+  append-path: /usr/lib/sdk/node20/bin
+  env:
+    NPM_CONFIG_LOGLEVEL: info
+modules:
+  - name: photoweb
+    buildsystem: simple
+    build-options:
+      env:
+        XDG_CACHE_HOME: /run/build/photoweb/cache
+    build-commands:
+      - npm install
+      - npm run dist
+      - >
+        if [ "$FLATPAK_ARCH" = "x86_64" ]; then
+          cp -r dist/linux-unpacked/* /app/main/;
+        elif [ "$FLATPAK_ARCH" = "aarch64" ]; then
+          cp -r dist/linux-arm64-unpacked/* /app/main/;
+        fi
+      - install -D -t /app/bin photoweb.sh
+      - mkdir -p /app/main
+      - install -Dm755 /app/main/resources/data/com.maxizamorano.photoweb.desktop -t /app/share/applications
+      - install -Dm644 /app/main/resources/data/com.maxizamorano.photoweb.metainfo.xml -t /app/share/metainfo
+      - install -Dm644 /app/main/resources/icons/photoweb.png /app/share/icons/hicolor/512x512/apps/com.maxizamorano.photoweb.png
+    sources:
+      - type: file
+        url: '#'
+      - type: script
+        dest-filename: photoweb.sh
+        commands:
+          - zypak-wrapper.sh /app/main/photoweb "$@"
