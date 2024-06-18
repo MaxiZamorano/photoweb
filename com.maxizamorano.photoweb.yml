@@ -23,22 +23,24 @@ modules:
       env:
         XDG_CACHE_HOME: /run/build/photoweb/cache
     build-commands:
-      - npm install
-      - npm run dist
-      - >
-        if [ "$FLATPAK_ARCH" = "x86_64" ]; then
-          cp -r dist/linux-unpacked/* /app/main/;
-        elif [ "$FLATPAK_ARCH" = "aarch64" ]; then
-          cp -r dist/linux-arm64-unpacked/* /app/main/;
-        fi
       - install -D -t /app/bin photoweb.sh
-      - mkdir -p /app/main
+      - mkdir /app/main
+      - |
+        if [ "$(arch)" = "x86_64" ]; then
+          tar -xzf photoweb_electron_build_x86_64.tar.gz -C /app/main;
+        else
+          tar -xzf photoweb_electron_build_aarch64.tar.gz -C /app/main;
+        fi
       - install -Dm755 /app/main/resources/data/com.maxizamorano.photoweb.desktop -t /app/share/applications
       - install -Dm644 /app/main/resources/data/com.maxizamorano.photoweb.metainfo.xml -t /app/share/metainfo
       - install -Dm644 /app/main/resources/icons/photoweb.png /app/share/icons/hicolor/512x512/apps/com.maxizamorano.photoweb.png
     sources:
       - type: file
-        url: '#'
+        url: https://github.com/MaxiZamorano/photoweb/releases/download/v1.0.0/photoweb_electron_build_x86_64.tar.gz
+        sha256: aadf8f73ec626c47c4df2174fe6b610b09f5c2d8f800ea89400d4d235e3bda3b
+      - type: file
+        url: https://github.com/MaxiZamorano/photoweb/releases/download/v1.0.0/photoweb_electron_build_aarch64.tar.gz
+        sha256: 780fd978925fe3aa6cf17b4a372381c04b25fc6563f0aa55fc02b2d69a962c97
       - type: script
         dest-filename: photoweb.sh
         commands:
